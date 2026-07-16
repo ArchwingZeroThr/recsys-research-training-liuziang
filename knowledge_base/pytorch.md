@@ -32,7 +32,8 @@ dir(pytorch)
 help(pytorch.3)
 ```
 
-# 三、Pytorch加载数据初认识
+___
+# 小土堆pytorch
 
 ## 1\.Dataset\(从垃圾中发现可回收垃圾\)
 
@@ -70,4 +71,38 @@ from torch.utils.data import Dataset
 ## 2\.Dataloader\(打包\)
 
 为网络提供不同的数据形式 
+___
+# 黑马教程
 
+## 一、张量
+
+### 1、定义
+
+![](https://cwafj6ayym1.feishu.cn/space/api/box/stream/download/asynccode/?code=Mjk5ODg1Y2M4MzBjN2VjYTdjNzNhZjc5NmMyM2I5NzVfdU9HZkZHb1hseUF5OExzaHEwZjBoYkYzMHhUTTBIYllfVG9rZW46VTN1OGIyNTFyb2I5ZnJ4QUhTN2Mxbk5wbllMXzE3ODQyMDE5NjU6MTc4NDIwNTU2NV9WNA&add_watermark=true&scene_type=CCM)
+
+### 2、创建
+
+```Python
+# 1.定义函数，演示：torch.tensor根据指定数据创建张量
+def dm01():
+    #场景1: 标量张量
+    t1 = torch.tensor(10)
+    print(f"type = {t1.type()},t1 = {t1}")
+    print('-'*30)
+
+    #场景2: 二维张量
+    data1 = [[1,2,3],[4,5,6]]
+    t2 = torch.tensor(data1)
+    print(f"type = {t2.type()},t2 = {t2}")
+    print('-'*30)
+
+    #场景3: 三维张量
+    data2=np.array(1,10,size(2,3))
+    t3 = torch.tensor(data2)
+    print(f"type = {t3.type()},t3 = {t3}")
+    print('-'*30)
+```
+
+但在场景3中有报错
+
+![697](https://cwafj6ayym1.feishu.cn/space/api/box/stream/download/asynccode/?code=NWJlMDBiZDFmZmIyN2E2NDhlZDViMmUyNWY5YWY4ODlfTXdVYVBnNWoxVHk0VnRyaFVjc2hNSWI0U28yZG5GMGZfVG9rZW46VWl0N2JBN0lUb3hySmd4clRHc2NORUpYbmJjXzE3ODQyMDE5NjU6MTc4NDIwNTU2NV9WNA&add_watermark=true&scene_type=CCM)

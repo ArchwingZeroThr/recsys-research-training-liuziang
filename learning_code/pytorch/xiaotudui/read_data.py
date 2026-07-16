@@ -23,7 +23,7 @@ class MyData(Dataset):
         return len(self.img_path)
 
 #实例化——蚂蚁
-root_dir="dataset/train"
+root_dir= "../dataset/train"
 ants_label_dir="ants"
 bees_label_dir="bees"
 #一般来说data和label分文件夹放置
