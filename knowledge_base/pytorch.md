@@ -5,7 +5,7 @@
 2. 通过anaconda安装构建出不同的环境，为后续不同的代码复现场景做准备。
     
 
-![](https://cwafj6ayym1.feishu.cn/space/api/box/stream/download/asynccode/?code=YmVlNGU0ZWYyNmViMzc3MDdlN2IyYmUxMjkzNjhkMDNfa0ZpYmY5SlBybG5tVVliMHF5aDZqMksxNGdORFNHSDZfVG9rZW46S3JnYmJ3WXZHbzBCTFN4dE9XNmM4ZDFTblhlXzE3ODQ0NjE2Nzk6MTc4NDQ2NTI3OV9WNA&add_watermark=true&scene_type=CCM)
+![](https://cwafj6ayym1.feishu.cn/space/api/box/stream/download/asynccode/?code=ZGU1NGUxZmRhZDczZDQ1YWJkYmU1NzYyNWRjYjU2ODhfSWZ2THVhS3JpdzRoSHpqVXQ3cHNqTWhLaTZxTEJNeDVfVG9rZW46S3JnYmJ3WXZHbzBCTFN4dE9XNmM4ZDFTblhlXzE3ODQ4MDU5ODI6MTc4NDgwOTU4Ml9WNA&add_watermark=true&scene_type=CCM)
 
 - 此处若太慢，可以在base环境配置mamba，提升pytorch和后续更新速度
     
@@ -55,7 +55,7 @@ help(pytorch.3)
 1. 首先在Pycharm中配置python解释器（pytorch环境）
     
 
-![](https://cwafj6ayym1.feishu.cn/space/api/box/stream/download/asynccode/?code=ZjJmNDE4YjJkODY3MGI2YmQ2OTczZTc0YzdhY2YyNjdfMzN6dlB4OGNnUjUzMnd0SkxROU9ZT1JhRERpdEVoN1FfVG9rZW46VHhYVmJya1BKbzYxVk94RHU3d2NwSnloblBiXzE3ODQ0NjE2Nzk6MTc4NDQ2NTI3OV9WNA&add_watermark=true&scene_type=CCM)
+![](https://cwafj6ayym1.feishu.cn/space/api/box/stream/download/asynccode/?code=MGNlZGU1MWFkMzNjMDc5ZDI5OTNkOTk5ZTg5ZjUxYjlfNDFxclJBeUNxcTRCR25GbHdyNzhhbWxseE9kSVRjQnBfVG9rZW46VHhYVmJya1BKbzYxVk94RHU3d2NwSnloblBiXzE3ODQ4MDU5ODI6MTc4NDgwOTU4Ml9WNA&add_watermark=true&scene_type=CCM)
 
 2. 随后在项目中输入代码
     
@@ -65,7 +65,7 @@ from torch.utils.data import Dataset
 #此时使用jupyter中使用help(Dataset)查看作用,也可以ctrl+左键
 ```
 
-![](https://cwafj6ayym1.feishu.cn/space/api/box/stream/download/asynccode/?code=Zjc5ZGExZjk5YjgzNTA1MGVkNWIyNmZiM2E1NjlkZGRfR1FtajRjbVlzRjNSZTZ4b1NKM1ViZ003MjFxRlN6SFVfVG9rZW46UTM4RWJseDFMb2laTzV4RHdiemN2ZVJCbkZoXzE3ODQ0NjE2Nzk6MTc4NDQ2NTI3OV9WNA&add_watermark=true&scene_type=CCM)
+![](https://cwafj6ayym1.feishu.cn/space/api/box/stream/download/asynccode/?code=ZjMzMzIwYTdhYzUyMjcxNTY3Y2MxNzc3ODBmNjkwMGFfa1RCbElKWGpVTmRLbVk2cWhvTTdpYVFTeGVZVnRZOFlfVG9rZW46UTM4RWJseDFMb2laTzV4RHdiemN2ZVJCbkZoXzE3ODQ4MDU5ODI6MTc4NDgwOTU4Ml9WNA&add_watermark=true&scene_type=CCM)
 
 3. 下载数据集蚂蚁蜜蜂
     
@@ -558,26 +558,301 @@ print(f"最终 x={x.item():.5f}, 梯度={x.grad.item():.5f}, loss={loss.item():.
 
 ## 十二、总结与速查表
 
-|                  |                               |                     |
-| ---------------- | ----------------------------- | ------------------- |
-| 操作分类             | 推荐API                         | 说明                  |
-| **创建（有数据）**      | `torch.tensor(data)`          | 最常用                 |
-| **创建（指定形状）**     | `torch.Tensor(2,3)`           | 未初始化                |
-| **全0/全1/指定值**    | `zeros`, `ones`, `full`       | 带 `_like` 仿照形状      |
-| **线性序列**         | `arange`, `linspace`          | -                   |
-| **随机**           | `randint`, `rand`, `randn`    | 用 `manual_seed` 固定  |
-| **类型转换**         | `.type()` 或 `.to()`           | -                   |
-| **转** **NumPy**  | `.numpy()`                    | 共享内存，用 `.copy()` 避免 |
-| **NumPy** **回转** | `torch.tensor(n)`             | 不共享；`from_numpy` 共享 |
-| **标量取值**         | `.item()`                     | 仅单个元素               |
-| **元素运算**         | `+ - * /`                     | 原地 `_` 版本           |
-| **矩阵乘法**         | `@` 或 `.matmul()`             | -                   |
-| **聚合统计**         | `sum`, `mean`, `max`, `min`   | 指定 `dim`            |
-| **索引**           | `[行,列]`、切片、布尔                 | -                   |
-| **形状变化**         | `.reshape()`                  | 最通用                 |
-| **展平**           | `.flatten()` 或 `.reshape(-1)` | -                   |
-| **维度交换**         | `.permute()`                  | -                   |
-| **拼接**           | `cat`（不增维）、`stack`（增维）        | 注意维度匹配              |
-| **自动微分**         | `.backward()`                 | 对标量使用               |
-| **梯度清零**         | `.grad.zero_()`               | 每次反向传播前             |
-| **参数更新**         | `data -= lr * grad`           | 手动更新                |
+|   |   |   |
+|---|---|---|
+|操作分类|推荐API|说明|
+|**创建（有数据）**|`torch.tensor(data)`|最常用|
+|**创建（指定形状）**|`torch.Tensor(2,3)`|未初始化|
+|**全0/全1/指定值**|`zeros`, `ones`, `full`|带 `_like` 仿照形状|
+|**线性序列**|`arange`, `linspace`|-|
+|**随机**|`randint`, `rand`, `randn`|用 `manual_seed` 固定|
+|**类型转换**|`.type()` 或 `.to()`|-|
+|**转****NumPy**|`.numpy()`|共享内存，用 `.copy()` 避免|
+|**NumPy****回转**|`torch.tensor(n)`|不共享；`from_numpy` 共享|
+|**标量****取值**|`.item()`|仅单个元素|
+|**元素运算**|`+ - * /`|原地 `_` 版本|
+|**矩阵乘法**|`@` 或 `.matmul()`|-|
+|**聚合统计**|`sum`, `mean`, `max`, `min`|指定 `dim`|
+|**索引**|`[行,列]`、切片、布尔|-|
+|**形状变化**|`.reshape()`|最通用|
+|**展平**|`.flatten()` 或 `.reshape(-1)`|-|
+|**维度交换**|`.permute()`|-|
+|**拼接**|`cat`（不增维）、`stack`（增维）|注意维度匹配|
+|**自动微分**|`.backward()`|对标量使用|
+|**梯度清零**|`.grad.zero_()`|每次反向传播前|
+|**参数更新**|`data -= lr * grad`|手动更新|
+
+
+## 十三、`detach()` 函数与梯度隔离
+
+  
+### 1. 问题背景
+
+- 当一个张量设置了 `requires_grad=True`（启用自动微分），它**不能直接调用** **`.numpy()`** 转换为 NumPy 数组，因为 NumPy 无法处理梯度追踪。
+    
+- 强行转换会报错：`RuntimeError: Can't call numpy() on Tensor that requires grad.`
+
+### 2. 解决方案：`detach()`
+
+- `detach()` 会**返回一个与原始****张量****共享数据****内存****、但不再追踪梯度的新张量**（即 `requires_grad=False`）。
+    
+- 新张量可以安全地转换为 NumPy 数组。
+### 3. 关键代码与输出
+
+  
+
+```Python
+import torch
+
+t1 = torch.tensor([1,2,3,4,5,6], requires_grad=True, dtype=torch.float)
+print(t1)   # tensor([1., 2., 3., 4., 5., 6.], requires_grad=True)
+
+# 使用 detach() 复制一份（共享数据，但断开梯度）
+t2 = t1.detach()
+print(t2)   # tensor([1., 2., 3., 4., 5., 6.])  无 requires_grad
+
+# 验证共享内存
+t1.data[0] = 100
+print(t2)   # tensor([100., 2., 3., 4., 5., 6.])  ← 被改变，证明共享
+
+# 查看梯度标志
+print(t1.requires_grad)   # True
+print(t2.requires_grad)   # False
+
+# t2 可以安全转 numpy
+n1 = t2.numpy()
+print(n1)   # [100. 2. 3. 4. 5. 6.]
+```
+
+  
+
+### 4. 核心要点
+
+- **`detach()`** **作用**：从当前计算图中分离出一个新的张量，新张量不再参与梯度计算，但仍与旧张量**共享底层存储**（修改数据会互相影响）。
+    
+- **常见使用场景**：
+    
+    - 将带梯度的张量转为 NumPy 进行可视化或保存。
+        
+    - 在训练中需要取出中间值但不影响梯度流（例如绘制损失曲线时）。
+        
+- **注意**：若需要独立数据副本，应使用 `.detach().clone()`。
+    
+
+## 十四、线性回归前向传播与自动微分基础（手动更新）
+
+### 1. 本案例目的
+
+在不使用优化器的情况下，手动完成一次**前向传播 → 损失计算 →** **反向传播** **→ 梯度打印**，演示自动微分的完整流程。
+
+### 2. 代码实现（关键步骤）
+
+```Python
+import torch
+
+# 1. 输入特征 x（2行5列，全1）
+x = torch.ones(2, 5)
+
+# 2. 标签 y（2行3列，全0）
+y = torch.zeros(2, 3)
+
+# 3. 定义可训练参数（权重 w 和偏置 b）
+w = torch.randn(5, 3, requires_grad=True)
+b = torch.randn(3, requires_grad=True)
+
+# 4. 前向传播：计算预测值 z = x @ w + b
+z = x @ w + b          # 形状 (2,3)
+
+# 5. 定义损失函数（均方误差 MSE）
+criterion = torch.nn.MSELoss()
+loss = criterion(z, y)   # 标量损失
+
+# 6. 反向传播，计算梯度
+loss.sum().backward()    # loss已是标量，.sum() 可省略
+
+# 7. 打印梯度（用于后续手动更新）
+print(w.grad)   # 形状 (5,3) 的梯度矩阵
+print(b.grad)   # 形状 (3,) 的梯度向量
+```
+
+  
+
+### 3. 输出说明（数值随机，仅示意）
+
+```Plain
+w的初始: tensor([[ 0.1234, -0.5678, ...], ...], requires_grad=True)
+b的初始: tensor([ 0.2345, -0.6789,  0.1234], requires_grad=True)
+z: tensor([[...], [...]])   # 预测值（全1乘以w加b）
+w的梯度: tensor([[...], ...])  # 根据 MSE 损失对 w 求导的结果
+b的梯度: tensor([...])       # 梯度向量
+```
+
+### 4. 教学意义
+
+- 展示**不依赖****优化器**的底层梯度计算，加深对 `backward()` 和 `.grad` 的理解。
+    
+- 后续若需更新参数，可参照 `w.data -= lr * w.grad`，但本代码仅打印梯度，未真正更新（演示型）。
+    
+
+  
+
+## 十五、完整线性回归训练流程（PyTorch 标准模板）
+
+### 1. 案例总览
+
+这是一个**端到端**的线性回归训练脚本，涵盖了：
+
+- 生成合成数据集（`make_regression`）
+    
+- NumPy → Tensor → `TensorDataset` → `DataLoader`
+    
+- 定义模型（`nn.Linear`）、损失函数（`MSE`）、优化器（`SGD`）
+    
+- 训练循环（多轮、批次迭代）
+    
+- 保存损失曲线并绘制预测 vs 真实值
+    
+      
+    
+
+### 2. 代码结构拆解
+
+  
+
+#### ① 创建数据集（`create_dataset`）
+
+```Python
+from sklearn.datasets import make_regression
+
+x, y, coef = make_regression(
+    n_samples=100,      # 样本数
+    n_features=1,       # 特征数
+    coef=True,          # 返回真实系数（用于绘图对比）
+    noise=10,           # 噪声
+    random_state=3,
+    bias=0.5            # 真实偏置
+)
+# 转为 Tensor（float 类型）
+x = torch.tensor(x, dtype=torch.float)
+y = torch.tensor(y, dtype=torch.float)
+```
+
+#### ② 训练函数（`train`）
+
+**步骤 2.1-2.2：数据加载器**
+
+```Python
+dataset = TensorDataset(x, y)           # 封装为数据集对象
+dataloader = DataLoader(dataset, batch_size=16, shuffle=True)
+```
+
+  
+
+**步骤 2.3-2.5：模型、损失、****优化器**
+
+```Python
+model = nn.Linear(1, 1)                 # 输入1维，输出1维
+criterion = nn.MSELoss()                # 均方误差
+optimizer = optim.SGD(model.parameters(), lr=0.01)  # 随机梯度下降
+```
+
+  
+
+**步骤 2.6：训练循环（关键）**
+
+```Python
+epochs = 100
+loss_list = []
+
+for epoch in range(epochs):
+    total_loss = 0.0
+    total_sample = 0
+    for train_x, train_y in dataloader:
+        # 前向传播
+        y_pred = model(train_x)
+        # 计算损失（注意 reshape 对齐维度）
+        loss = criterion(y_pred, train_y.reshape(-1, 1))
+        total_loss += loss.item()
+        total_sample += 1
+        # 反向传播 + 更新
+        optimizer.zero_grad()   # 梯度清零
+        loss.sum().backward()   # 反向传播
+        optimizer.step()        # 参数更新
+    # 记录本轮平均损失
+    loss_list.append(total_loss / total_sample)
+    print(f'轮数:{epoch+1}, 平均损失: {loss_list[-1]:.4f}')
+```
+
+  
+
+#### ③ 绘制结果
+
+- **损失曲线**：`plt.plot(range(epochs), loss_list)`，显示损失下降趋势。
+    
+- **拟合效果图**：
+    
+    - 散点图：样本点 `(x, y)`
+        
+    - 红线：模型预测值（`model.weight * x + model.bias`）
+        
+    - 绿线：真实函数（`coef * x + 0.5`）
+        
+
+
+### 3. 预期输出（示例）
+
+```Plain
+轮数:1, 平均损失: 2345.6789
+轮数:2, 平均损失: 1800.1234
+...
+轮数:100, 平均损失: 98.7654
+模型参数，权重： Parameter containing: tensor([[2.3456]], requires_grad=True)，偏置： Parameter containing: tensor([0.4567], requires_grad=True)
+```
+
+- 最终权重接近真实系数 `coef`，偏置接近 0.5（因噪声影响会有偏差）。
+    
+- 损失曲线呈下降趋势并趋于平稳。
+    
+
+### 4. 核心知识点归纳
+
+|   |   |
+|---|---|
+|组件|作用|
+|`TensorDataset`|将特征和标签打包成统一数据集|
+|`DataLoader`|批次迭代、打乱数据|
+|`nn.Linear`|全连接层（线性变换）|
+|`nn.MSELoss`|均方误差损失（回归常用）|
+|`optim.SGD`|随机梯度下降优化器|
+|`optimizer.zero_grad()`|清零梯度（避免累加）|
+|`optimizer.step()`|根据梯度更新参数|
+|`loss.item()`|提取损失标量值（用于记录）|
+|`model.parameters()`|获取模型所有可训练参数|
+
+  
+
+## 十六、总结速查表（十三~十六新增条目）
+
+  
+
+|           |                                            |                     |
+| --------- | ------------------------------------------ | ------------------- |
+| 操作分类      | 新增API                                      | 说明                  |
+| **梯度隔离**  | `tensor.detach()`                          | 断开梯度追踪，共享数据，可转numpy |
+| **独立副本**  | `tensor.detach().clone()`                  | 断开梯度且拷贝数据（不共享）      |
+| **数据集封装** | `TensorDataset(x, y)`                      | 将张量对打包为数据集          |
+| **数据加载**  | `DataLoader(dataset, batch_size, shuffle)` | 批次迭代器               |
+| **模型定义**  | `nn.Linear(in, out)`                       | 线性层（权重+偏置）          |
+| **损失函数**  | `nn.MSELoss()`                             | 均方误差                |
+| **优化器**   | `optim.SGD(params, lr)`                    | 随机梯度下降              |
+| **梯度清零**  | `optimizer.zero_grad()`                    | 清空所有参数的梯度           |
+| **参数更新**  | `optimizer.step()`                         | 执行一步参数更新            |
+| **提取标量**  | `loss.item()`                              | 获取loss的Python数值     |
+
+  
+
+---
+
+  
+
+_至此，__PyTorch_ _张量__操作、自动微分、训练循环的完整知识体系已建立。后续可在此基础上扩展更复杂的模型（如__CNN__、__RNN__）和高级优化技巧。_
